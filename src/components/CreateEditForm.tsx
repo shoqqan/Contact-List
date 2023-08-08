@@ -113,7 +113,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
 
     return (
         <form className="card-section" onSubmit={handleSubmit}>
-            <div className={'flex flex-col items-center justify-center'}>
+            <div className={'flex flex-col items-center justify-center gap-y-5'}>
                 <Input
                     label={'Name'}
                     name={'name'}
@@ -139,7 +139,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     error={(touched.mail && errors.mail) ? errors.mail : ''}
                 />
                 <label htmlFor="Toggle3"
-                       className="inline-flex items-center p-2 rounded-md cursor-pointer dark:text-gray-800">
+                       className="inline-flex items-center block p-2 mb-9 rounded-md cursor-pointer dark:text-gray-800 lg:hidden">
                     <input id="Toggle3" type="checkbox" checked={sex} onChange={onSexChange}
                            className="hidden peer"/>
                     <span
@@ -147,6 +147,27 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     <span
                         className="px-4 py-2 rounded-r-md dark:bg-gray-300 peer-checked:dark:bg-violet-400 peer-checked:dark:text-red-500 peer-checked:dark:font-bold">Female</span>
                 </label>
+                <div className={'hidden lg:flex gap-x-2 mb-12'}>
+                    <div>Male</div>
+                    <input
+                        className="h-0 w-0 invisible peer"
+                        id={'1'}
+                        type="checkbox"
+                        // disabled={disabled}
+                        checked={sex}
+                        onChange={onSexChange}
+                    />
+                    <label
+                        style={{WebkitTapHighlightColor: "transparent"}}
+                        className={'peer-checked:bg-green-500 peer-checked:[&>span]:left-[calc(100%_-_2px)] peer-checked:[&>span]:-translate-x-full peer-checked:[&:active>span]:w-[30px] peer-disabled:opacity-50 peer-disabled:[&:active>span]:w-[55px] flex items-center justify-between bg-[grey] cursor-pointer w-[50px] h-[30px] relative transition-[background-color] duration-[0.2s] rounded-full'}
+                        htmlFor={'1'}
+                    >
+                        <span
+                            className="content-[''] absolute bg-white w-[25px] h-[25px] transition-[0.2s] shadow-[0_0_2px_0_rgba(10,10,10,0.29)] rounded-[45px] left-0.5 top-0.5"/>
+                    </label>
+                    <div>Female</div>
+                </div>
+
             </div>
             <button
                 className='w-[80px] h-[40px] bg-white rounded-3xl hover:scale-110 ease-in-out duration-300'
