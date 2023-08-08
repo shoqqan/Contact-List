@@ -143,9 +143,9 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     <input id="Toggle3" type="checkbox" checked={sex} onChange={onSexChange}
                            className="hidden peer"/>
                     <span
-                        className="px-4 py-2 rounded-l-md dark:bg-violet-400 peer-checked:dark:bg-gray-300">Male</span>
+                        className="px-4 py-2 rounded-l-md dark:bg-violet-400 dark:text-red-500 dark:font-bold peer-checked:dark:bg-gray-300 peer-checked:dark:text-black peer-checked:dark:font-normal">Male</span>
                     <span
-                        className="px-4 py-2 rounded-r-md dark:bg-gray-300 peer-checked:dark:bg-violet-400">Female</span>
+                        className="px-4 py-2 rounded-r-md dark:bg-gray-300 peer-checked:dark:bg-violet-400 peer-checked:dark:text-red-500 peer-checked:dark:font-bold">Female</span>
                 </label>
             </div>
             <button
