@@ -14,7 +14,7 @@ export const App = () => {
        }
     },[])
     return (
-        <div className={'w-full bg-[#F9F9F9] flex justify-center items-center overflow-x-hidden font-poppins md:bg-lime-900'}>
+        <div className={'w-full bg-[#F9F9F9] flex justify-center items-center overflow-x-hidden font-poppins lg:bg-lime-900'}>
             <Routes>
                 <Route path={'/'} element={<Contacts/>}/>
                 <Route path={'/new-contact'} element={<CreateContact/>}/>

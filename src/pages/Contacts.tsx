@@ -21,10 +21,10 @@ export const Contacts = () => {
     const [activeFilter, setActiveFilter] = useState<FilterType>('All')
     return (
         <div
-            className={'w-full h-screen flex flex-col items-center bg-[#F9F9F9] gap-y-12 py-12 md:bg-lime-900 lg:py-0'}>
+            className={'w-full h-screen flex flex-col items-center bg-[#F9F9F9] gap-y-12 py-12 lg:bg-lime-900 lg:py-0'}>
             <div className={'text-2xl font-bold lg:hidden'}>Contacts</div>
             <div
-                className={'w-3/4 flex flex-col items-center bg-lime-900 gap-y-12 py-12 cursor-pointer rounded-xl shadow-2xl md:shadow-none lg:py-2'}>
+                className={'w-3/4 flex flex-col items-center bg-lime-900 gap-y-12 py-12 cursor-pointer rounded-xl shadow-2xl lg:shadow-none lg:py-2'}>
                 <div className={'w-full flex justify-between px-12 xl:flex-col items-center gap-y-12'}>
                     <div className={'flex gap-x-2 text-white md:flex-col xl:flex-col items-center gap-y-9'}>
                         <div className={'font-bold'}>Sort by:</div>
@@ -54,12 +54,12 @@ export const Contacts = () => {
                     contacts.map(el =>
                         el.isEditing ?
                             <div
-                                className={'w-2/4 flex justify-center gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl md:w-full'}>
+                                className={'w-2/4 flex justify-center gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl lg:w-full'}>
                                 <CreateEditForm contact={el}/>
                             </div>
                             :
                             <div
-                                className={'w-2/4 flex justify-between gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl md:w-full'}>
+                                className={'w-2/4 flex justify-between gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl lg:w-full'}>
                                 <div className={'flex flex-col gap-y-9 py-9'}>
                                     <div>{el.name}</div>
                                     <div>{el.phoneNumber}</div>
