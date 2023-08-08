@@ -1,5 +1,6 @@
 import {v1} from "uuid";
 
+export type FilterType = 'All' | 'Name' | 'Mail' | 'Number' | 'Only males' | 'Only females'
 export type ContactType = {
     id: string
     phoneNumber: string
@@ -39,20 +40,21 @@ const initState: InitStateType = {
     contacts: [
         {
             id: v1(),
-            phoneNumber: "+77755998905",
-            name: "Alice Johnson",
-            mail: "alice@example.com",
-            sex: "female",
-            isEditing: false
-        },
-        {
-            id: v1(),
             phoneNumber: "+71234567890",
             name: "Bob Smith",
             mail: "bob@example.com",
             sex: "male",
             isEditing: false
+        },
+        {
+            id: v1(),
+            phoneNumber: "+77755998905",
+            name: "Alice Johnson",
+            mail: "alice@example.com",
+            sex: "female",
+            isEditing: false
         }
+
     ]
 }
 
@@ -72,7 +74,6 @@ export const setEditModeAC = (id: string, value: boolean): SetEditModeAT => (
 export const appReducer = (state: InitStateType = initState, action: ActionType) => {
     switch (action.type) {
         case "EDIT-CONTACT": {
-            console.log(action.contact)
             return {
                 ...state,
                 contacts: state.contacts.map((el) => (el.id === action.contact.id ? action.contact : {...el}))
@@ -84,10 +85,10 @@ export const appReducer = (state: InitStateType = initState, action: ActionType)
                 contacts: state.contacts.map((el) => (el.id === action.id ? {...el, isEditing: action.value} : {...el}))
             }
         }
-        case "DELETE-CONTACT":{
+        case "DELETE-CONTACT": {
             return {
                 ...state,
-                contacts: state.contacts.filter(el=>el.id!==action.id)
+                contacts: state.contacts.filter(el => el.id !== action.id)
             }
         }
         case "CREATE-CONTACT": {
