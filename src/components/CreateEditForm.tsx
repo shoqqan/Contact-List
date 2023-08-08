@@ -149,7 +149,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                 </label>
             </div>
             <button
-                className='w-[80px] h-[40px] bg-white rounded-3xl'
+                className='w-[80px] h-[40px] bg-white rounded-3xl hover:scale-110 ease-in-out duration-300'
                 onClick={() => {
                     setTouchedAll()
                 }}

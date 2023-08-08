@@ -75,7 +75,7 @@ export const Input: React.FC<InputPropsType> = React.memo((
                 {children}
                 {
                     (error || helperText) && (
-                        <div className={`text-xs leading-4 mt-1.5 ${helperTextError}`}>
+                        <div className={`text-s text-red-500 leading-4 mt-1.5 ${helperTextError}`}>
                             {error ? error : helperText}
                         </div>
                     )
