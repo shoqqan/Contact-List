@@ -109,7 +109,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
 
     const numbersRegex = (v: string) => v.replace(/[^0-9+ ]/gi, "").replace(/;/i, "").substring(0, 12);
     const emailRegex = (v: string) => v.replace(/[^A-Z-0-9_.-@]/gi, "").replace(/;/i, "");
-    const latinRegex = (v: string) => v.replace(/[^A-Z- ]/gi, "").replace(/;/i, "");
+    const latinRegex = (v: string) => v.replace(/[^A-Z-А-Я ]/gi, "").replace(/;/i, "");
 
     return (
         <form className="card-section" onSubmit={handleSubmit}>
