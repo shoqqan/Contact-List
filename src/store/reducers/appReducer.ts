@@ -1,3 +1,5 @@
+import {v1} from "uuid";
+
 export type ContactType = {
     id: string
     phoneNumber: string
@@ -12,7 +14,16 @@ type InitStateType = {
 type EditContactAT = {
     type: 'EDIT-CONTACT'
     contact: ContactType
+}
 
+type CreateContactAT = {
+    type: 'CREATE-CONTACT'
+    contact: ContactType
+}
+
+type DeleteContactAT = {
+    type: 'DELETE-CONTACT'
+    id: string
 }
 
 type SetEditModeAT = {
@@ -22,10 +33,12 @@ type SetEditModeAT = {
 }
 type ActionType = EditContactAT
     | SetEditModeAT
+    | CreateContactAT
+    | DeleteContactAT
 const initState: InitStateType = {
     contacts: [
         {
-            id: 'lol',
+            id: v1(),
             phoneNumber: "+77755998905",
             name: "Alice Johnson",
             mail: "alice@example.com",
@@ -33,37 +46,11 @@ const initState: InitStateType = {
             isEditing: false
         },
         {
-            id: 'lol1',
+            id: v1(),
             phoneNumber: "+71234567890",
             name: "Bob Smith",
             mail: "bob@example.com",
             sex: "male",
-            isEditing: false
-        },
-        {
-            id: 'lol2',
-            phoneNumber: "+79806508796",
-            name: "Carol Williams",
-            mail: "carol@example.com",
-            sex: "female",
-            isEditing: false
-
-        },
-        {
-            id: 'lol3',
-            phoneNumber: "+77783999034",
-            name: "David Brown",
-            mail: "david@example.com",
-            sex: "male",
-            isEditing: false
-
-        },
-        {
-            id: 'lol4',
-            phoneNumber: "+76554335409",
-            name: "Eve Davis",
-            mail: "eve@example.com",
-            sex: "female",
             isEditing: false
         }
     ]
@@ -72,7 +59,13 @@ const initState: InitStateType = {
 export const editContactAC = (contact: ContactType): EditContactAT => (
     {type: 'EDIT-CONTACT', contact}
 )
+export const createContactAC = (contact: ContactType): CreateContactAT => (
+    {type: 'CREATE-CONTACT', contact}
+)
 
+export const deleteContactAC = (id: string): DeleteContactAT => (
+    {type: 'DELETE-CONTACT', id}
+)
 export const setEditModeAC = (id: string, value: boolean): SetEditModeAT => (
     {type: 'SET-EDIT-MODE', id, value}
 )
@@ -89,6 +82,18 @@ export const appReducer = (state: InitStateType = initState, action: ActionType)
             return {
                 ...state,
                 contacts: state.contacts.map((el) => (el.id === action.id ? {...el, isEditing: action.value} : {...el}))
+            }
+        }
+        case "DELETE-CONTACT":{
+            return {
+                ...state,
+                contacts: state.contacts.filter(el=>el.id!==action.id)
+            }
+        }
+        case "CREATE-CONTACT": {
+            return {
+                ...state,
+                contacts: [action.contact, ...state.contacts]
             }
         }
         default: {

@@ -1,8 +1,10 @@
 import React, {useCallback, useState} from 'react';
 import {useFormik} from "formik";
 import {Input} from "./Input";
-import {ContactType, editContactAC} from "../store/reducers/appReducer";
+import {ContactType, createContactAC, editContactAC} from "../store/reducers/appReducer";
 import {useDispatch} from "react-redux";
+import {v1} from "uuid";
+import {useNavigate} from "react-router-dom";
 
 const validate = ({name, phoneNumber, mail}: initStateType) => {
     let errors = {};
@@ -25,7 +27,7 @@ const validate = ({name, phoneNumber, mail}: initStateType) => {
     return errors;
 }
 
-const sexDefining = (sex:'male' | 'female') =>(
+const sexDefining = (sex: 'male' | 'female') => (
     sex === 'female'
 )
 type initStateType = {
@@ -35,12 +37,13 @@ type initStateType = {
     sex: boolean;
 }
 type CreateEditForm = {
-    contact: ContactType
+    contact?: ContactType
 }
 
 export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
+    const navigate = useNavigate()
     const dispatch = useDispatch<any>()
-    const [sex,setSex] = useState<boolean>(sexDefining(contact.sex))
+    const [sex, setSex] = useState<boolean>(contact ? sexDefining(contact.sex) : false)
     const {values, handleSubmit, handleChange, touched, errors, setTouched} = useFormik({
         initialValues: {
             name: contact ? contact.name : '',
@@ -50,14 +53,26 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
         },
         validate,
         onSubmit: values => {
-            dispatch(editContactAC({
-                id: contact.id,
-                phoneNumber: values.phoneNumber,
-                name: values.name,
-                mail: values.mail,
-                sex: values.sex?'male':'female',
-                isEditing: false
-            }))
+            if (contact) {
+                dispatch(editContactAC({
+                    id: contact.id,
+                    phoneNumber: values.phoneNumber,
+                    name: values.name,
+                    mail: values.mail,
+                    sex: values.sex ? 'male' : 'female',
+                    isEditing: false
+                }))
+            } else {
+                dispatch(createContactAC({
+                    id: v1(),
+                    phoneNumber: values.phoneNumber,
+                    name: values.name,
+                    mail: values.mail,
+                    sex: values.sex ? 'male' : 'female',
+                    isEditing: false
+                }))
+                navigate('/')
+            }
         },
     });
 
@@ -68,15 +83,8 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
 
     const onSexChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSex(e.currentTarget.checked)
-        e.currentTarget.checked=sex
+        e.currentTarget.checked = sex
         handleChange(e)
-        // if (e.currentTarget.checked) {
-        //     e.currentTarget.value='female'
-        // } else {
-        //     e.currentTarget.value='male'
-        // }
-        // handleChange(e)
-        // console.log(e.currentTarget.value)
     }, []);
 
     const onNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -146,7 +154,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     setTouchedAll()
                 }}
                 type="submit">
-                Save
+                {contact ? 'Save' : 'Create'}
             </button>
         </form>
     );
