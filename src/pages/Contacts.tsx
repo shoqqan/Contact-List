@@ -54,11 +54,13 @@ export const Contacts = () => {
                     contacts.map(el =>
                         el.isEditing ?
                             <div
+                                key={el.id}
                                 className={'w-2/4 flex justify-center gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl lg:w-full'}>
                                 <CreateEditForm contact={el}/>
                             </div>
                             :
                             <div
+                                key={el.id}
                                 className={'w-2/4 flex justify-between gap-y-9 px-9 py-9 bg-slate-300 rounded-2xl shadow-2xl lg:w-full'}>
                                 <div className={'flex flex-col gap-y-9 py-9'}>
                                     <div>{el.name}</div>
