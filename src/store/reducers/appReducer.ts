@@ -54,17 +54,17 @@ const initState: InitStateType = {
         {
             id: v1(),
             phoneNumber: "+71234567890",
-            name: "Bob Smith",
-            mail: "bob@example.com",
-            sex: "male",
+            name: "Victoria Li",
+            mail: "li.victoria@example.com",
+            sex: "female",
             isEditing: false
         },
         {
             id: v1(),
-            phoneNumber: "+77755998905",
-            name: "Alice Johnson",
-            mail: "alice@example.com",
-            sex: "female",
+            phoneNumber: "+77755998000",
+            name: "Shokan Tatayev",
+            mail: "tatayev@example.com",
+            sex: "male",
             isEditing: false
         }
     ]
