@@ -138,28 +138,18 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     value={values.mail}
                     error={(touched.mail && errors.mail) ? errors.mail : ''}
                 />
-                <label htmlFor="Toggle3"
-                       className="inline-flex items-center block p-2 mb-9 rounded-md cursor-pointer dark:text-gray-800 lg:hidden">
-                    <input id="Toggle3" type="checkbox" checked={sex} onChange={onSexChange}
-                           className="hidden peer"/>
-                    <span
-                        className="px-4 py-2 rounded-l-md dark:bg-violet-400 dark:text-red-500 dark:font-bold peer-checked:dark:bg-gray-300 peer-checked:dark:text-black peer-checked:dark:font-normal">Male</span>
-                    <span
-                        className="px-4 py-2 rounded-r-md dark:bg-gray-300 peer-checked:dark:bg-violet-400 peer-checked:dark:text-red-500 peer-checked:dark:font-bold">Female</span>
-                </label>
-                <div className={'hidden lg:flex gap-x-2 mb-12'}>
+                <div className={'flex gap-x-2 mb-12'}>
                     <div>Male</div>
                     <input
                         className="h-0 w-0 invisible peer"
                         id={'1'}
                         type="checkbox"
-                        // disabled={disabled}
                         checked={sex}
                         onChange={onSexChange}
                     />
                     <label
                         style={{WebkitTapHighlightColor: "transparent"}}
-                        className={'peer-checked:bg-green-500 peer-checked:[&>span]:left-[calc(100%_-_2px)] peer-checked:[&>span]:-translate-x-full peer-checked:[&:active>span]:w-[30px] peer-disabled:opacity-50 peer-disabled:[&:active>span]:w-[55px] flex items-center justify-between bg-[grey] cursor-pointer w-[50px] h-[30px] relative transition-[background-color] duration-[0.2s] rounded-full'}
+                        className={'peer-checked:bg-pink-500 peer-checked:[&>span]:left-[calc(100%_-_2px)] peer-checked:[&>span]:-translate-x-full peer-checked:[&:active>span]:w-[30px] peer-disabled:opacity-50 peer-disabled:[&:active>span]:w-[55px] flex items-center justify-between bg-indigo-600 cursor-pointer w-[50px] h-[30px] relative transition-[background-color] duration-[0.2s] rounded-full'}
                         htmlFor={'1'}
                     >
                         <span
