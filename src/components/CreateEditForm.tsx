@@ -139,7 +139,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                     error={(touched.mail && errors.mail) ? errors.mail : ''}
                 />
                 <div className={'flex gap-x-2 mb-12'}>
-                    <div>Male</div>
+                    <div className={contact?'text-black':'text-white'}>Male</div>
                     <input
                         className="h-0 w-0 invisible peer"
                         id={'1'}
@@ -155,7 +155,7 @@ export const CreateEditForm: React.FC<CreateEditForm> = ({contact}) => {
                         <span
                             className="content-[''] absolute bg-white w-[25px] h-[25px] transition-[0.2s] shadow-[0_0_2px_0_rgba(10,10,10,0.29)] rounded-[45px] left-0.5 top-0.5"/>
                     </label>
-                    <div>Female</div>
+                    <div className={contact?'text-black':'text-white'}>Female</div>
                 </div>
 
             </div>
