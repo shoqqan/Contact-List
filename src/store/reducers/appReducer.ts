@@ -123,10 +123,9 @@ export const appReducer = (state: InitStateType = initState, action: ActionType)
             return {...state,contacts: action.contacts}
         }
         case "SET-FILTER": {
-            console.log('lol')
             switch (action.filter) {
                 case "Number": {
-                    console.log()
+
                     return {
                         ...state, contacts: JSON.parse(localStorage.getItem('initState')).contacts.slice().sort((a, b) => {
                             const phoneNumberA = a.phoneNumber;
