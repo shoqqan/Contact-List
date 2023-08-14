@@ -61,7 +61,7 @@ const initState: InitStateType = {
         },
         {
             id: v1(),
-            phoneNumber: "+77755998000",
+            phoneNumber: "+77005008000",
             name: "Shokan Tatayev",
             mail: "tatayev@example.com",
             sex: "male",

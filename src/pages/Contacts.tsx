@@ -27,7 +27,7 @@ export const Contacts = () => {
                 className={'w-3/4 flex flex-col items-center bg-lime-900 gap-y-12 py-12 cursor-pointer rounded-xl shadow-2xl lg:shadow-none lg:py-2'}>
                 <div className={'w-full flex justify-between px-12 xl:flex-col items-center gap-y-12'}>
                     <div className={'flex gap-x-2 text-white md:flex-col xl:flex-col items-center gap-y-9'}>
-                        <div className={'font-bold'}>Sort by:</div>
+                        <div className={'font-bold pb-5 lg:pt-5'}>Sort by:</div>
                         <div className={'flex gap-x-2 md:w-[350px] h-[50px] flex-wrap justify-center gap-2'}>
                             {filters.map((el) => {
                                     const divClass = `h-8 flex justify-center items-center px-3 text-black rounded-2xl hover:scale-110 ease-in-out duration-300 ${activeFilter === el.title ? `bg-white` : `bg-gray-400`}`
