@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>About the project</h2>
 
-Currently, two official plugins are available:
+<p><b>CONTACT LIST</b> is a website that allows users to manage their contact with responsive and comfortable design for all devices. <br/>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+» Created with ⚡<b>VITE</b>⚡
+<hr>
+👉 Live Demo: <a href='https://shoqqan.github.io/todolist-without-back/'>Contact List Demo</a>
 
-## Expanding the ESLint configuration
+<h3>Build with:</h3>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+» React TS <br>
+» Redux  <br>
+» TailwindCSS <br>
 
-- Configure the top-level `parserOptions` property like this:
+<br>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+<h2>Screenshots of the Project 📸</h2>
+<br>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+<div align='center'>
+<img src='https://github.com/shoqqan/todolist-without-back/assets/108088790/3be3bf20-3de4-4b9b-ad3a-b347f038a4de'/>
+
+</div>
+<br>
+
+<div align='center'>
+<img src='https://github.com/shoqqan/todolist-without-back/assets/108088790/8a23102b-1d06-4602-97c0-c52998fd6e3e'/>
+
+</div>
+<br>
+
+<div align='center'>
+<img src='https://github.com/shoqqan/todolist-without-back/assets/108088790/7f37d7b1-65e2-4a60-be95-897386df7765'/>
+
+</div>
+<br><br>
