@@ -6,7 +6,7 @@
 
 » Created with ⚡<b>VITE</b>⚡
 <hr>
-👉 Live Demo: <a href='https://shoqqan.github.io/todolist-without-back/'>Contact List Demo</a>
+👉 Live Demo: <a href='https://shoqqan.github.io/contact-list/'>Contact List Demo</a>
 
 <h3>Build with:</h3>
 
